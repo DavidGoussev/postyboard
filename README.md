@@ -28,7 +28,8 @@ ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin14]
 
 * Deployment instructions
 
-* ...
+* Heroku app name: `dpg5000-bloccit`
+  [https://dpg5000-bloccit.herokuapp.com/](https://dpg5000-bloccit.herokuapp.com/)
 
 
 Please feel free to use a different markup language if you do not plan to run
