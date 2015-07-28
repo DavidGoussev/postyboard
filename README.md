@@ -12,11 +12,12 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version:
-ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin14]
+  ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin14]
 
 * System dependencies
 
-* Configuration
+* Configuration:
+  CSS Framework: Bootstrap
 
 * Database creation
 
