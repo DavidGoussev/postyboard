@@ -26,6 +26,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'annotate'
+
+gem 'devise'
+
 #added as per Checkpoint32
 gem 'faker'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -33,7 +37,12 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+
+group :doc do
+  gem 'sdoc', require: false
+end
+
+#gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Twitter Bootstrap for CSS framework.
 gem 'bootstrap-sass'
 # Use ActiveModel has_secure_password
