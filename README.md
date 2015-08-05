@@ -15,9 +15,15 @@ Things you may want to cover:
   ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin14]
 
 * System dependencies
+  'bootstrap'
+  'rails', '4.2.3'
+  'annotate'
+  'devise'
+  'figaro'
+  'sendgrid
 
 * Configuration:
-  CSS Framework: Bootstrap
+
 
 * Database creation
 
