@@ -1,2 +1,25 @@
-<h1>welcome to the bloccit</h1>
-<p>this is the home page for bloccit.  enjoy bloccit.  bloccit is your friend.</p>
+<br>
+
+<div class="jumbotron">
+  <h1>bloccit</h1>
+  <p>bloccit is a resource for sharing links with your friends!</p>
+  <p>
+      <%= link_to "sign in", new_user_session_path, class: 'btn btn-primary' %> or
+      <%= link_to "sign up", new_user_registration_path, class: 'btn btn-primary' %> today!
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h2>solves world hunger</h2>
+    <p>bloccit will deliver food and water to those in need, all over the world.</p>
+  </div>
+  <div class="col-md-4">
+    <h2>eliminates poverty</h2>
+    <p>bloccit will deliver money and education to those in need, all over the world.</p>
+  </div>
+  <div class="col-md-4">
+    <h2>makes you better looking</h2>
+    <p>bloccit will make you hawt</p>
+  </div>
+</div>
