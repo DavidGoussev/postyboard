@@ -1,4 +1,12 @@
 class PostsController < ApplicationController
+
+  before_action :flash_attack
+  skip_before_action :flash_attack, only: [:new, :index]
+
+  def flash_attack
+    flash[:notice] = "this is a serious flash attack!"
+  end
+
   def index
     @posts = Post.all
   end
