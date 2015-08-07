@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
 
    rescue_from Pundit::NotAuthorizedError do |exception|
-     redirect_to root_url, alert: exception.message
+     redirect_to root_url, alert: "you are not authorized to do this.  log in with proper credentials."
    end
 
   protected

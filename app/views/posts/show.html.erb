@@ -1,4 +1,11 @@
 <h1><%= @post.title %></h1>
+<% if @post.summary %>
+  <h3>post summary: <%= @post.summary.description %> </h3>
+
+<% else %>
+  <%= link_to "create summary for the post", new_topic_post_summary_path(@topic, @post) %>
+<% end %>
+<br>
 
 <div class="row">
   <div class="col-md-8">

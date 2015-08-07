@@ -42,13 +42,13 @@ require 'faker'
  posts = Post.all
 
  #Create Summaries
- # 50.times do
- #   Summary.create!(
- #   post: posts.sample,
- #   description: Faker::Lorem.sentence
- #   )
- # end
- # summaries = Summary.all
+ 50.times do
+   Summary.create!(
+   post: posts.sample,
+   description: Faker::Lorem.sentence
+   )
+ end
+ summaries = Summary.all
 
  # Create Comments
  100.times do
