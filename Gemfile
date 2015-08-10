@@ -40,7 +40,14 @@ gem 'pundit'
 #markdown text
 gem 'redcarpet'
 
-#added as per Checkpoint32
+#image management
+gem 'carrierwave'
+gem 'mini_magick'
+
+# support for Amazon S3 image storage
+gem 'fog'
+
+#added as per Checkpoint32 - seeding
 gem 'faker'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806212320) do
+ActiveRecord::Schema.define(version: 20150810202326) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -32,13 +32,23 @@ ActiveRecord::Schema.define(version: 20150806212320) do
   end
 
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "summaries", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "post_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "summaries", ["post_id"], name: "index_summaries_on_post_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "public"
+    t.boolean  "public",      default: true
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +70,7 @@ ActiveRecord::Schema.define(version: 20150806212320) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "role"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
