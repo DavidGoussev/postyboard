@@ -1,6 +1,8 @@
 <h1><%= @post.title %></h1>
 <% if @post.summary %>
   <h3>post summary: <%= @post.summary.description %> </h3>
+  <%= link_to "edit summary for the post", edit_topic_post_summary_path(@topic, @post, @summary) %>
+
 
 <% else %>
   <%= link_to "create summary for the post", new_topic_post_summary_path(@topic, @post) %>
