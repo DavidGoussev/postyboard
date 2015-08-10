@@ -28,11 +28,17 @@ gem 'jquery-rails'
 
 gem 'annotate'
 
+#authentication solution (user accounts. password generation, login handling)
 gem 'devise'
 
+#encapsulates sensitive password information to ENV variables, from dev to production
 gem 'figaro', '1.0'
 
+#object oriented authorization (credentialing for specific app creation/editing based on user roles)
 gem 'pundit'
+
+#markdown text
+gem 'redcarpet'
 
 #added as per Checkpoint32
 gem 'faker'
