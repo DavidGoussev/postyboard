@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update_attributes(user_params)
-      flash[notice:] = "user information updated"
+      flash[:notice] = "user information updated, looks fabulous"
       redirect_to edit_user_registration_path
     end
   end
