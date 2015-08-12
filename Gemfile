@@ -47,6 +47,9 @@ gem 'mini_magick'
 # support for Amazon S3 image storage
 gem 'fog'
 
+#pagination
+gem 'will_paginate', '~> 3.0.5'
+
 #added as per Checkpoint32 - seeding
 gem 'faker'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
