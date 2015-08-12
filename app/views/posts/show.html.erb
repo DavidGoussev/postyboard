@@ -9,10 +9,14 @@
     </small>
     <p><%= markdown_to_html @post.body %></p>
     <p><%= image_tag(@post.image.url) if @post.image? %></p>
+    <br>
+    <h4> comments </h4>
+    <p><%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
+      <p><%= render @comments %>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
-      <%= link_to "edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
+      <%= link_to "edit", edit_topic_post_path(@topic, @post, @comment), class: 'btn btn-success' %>
     <% end %>
   </div>
 </div>

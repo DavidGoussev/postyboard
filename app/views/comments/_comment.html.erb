@@ -1,0 +1,9 @@
+<% if comment.body? %>
+    <p><%= comment.body %></p>
+      <small><i>
+          submitted <%= time_ago_in_words(comment.created_at) unless comment.created_at.blank? %>
+          by <%= comment.user.name %></i> <%= image_tag(comment.user.avatar.tiny.url) if comment.user.avatar? %>
+      </small>
+      <br>
+<% end %>
+  <br>
