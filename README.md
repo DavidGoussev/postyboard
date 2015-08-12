@@ -20,7 +20,8 @@ Things you may want to cover:
   'annotate'
   'devise'
   'figaro'
-  'sendgrid
+  'sendgrid'
+  
 
 * Configuration:
 

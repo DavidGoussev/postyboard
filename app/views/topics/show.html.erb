@@ -24,11 +24,14 @@
           </small>
         </div>
        </div>
-     <% end %>
+      <% end %>
+      <p> <%= will_paginate @posts %></p>
    </div>
+ </br>
    <div class="col-md-4">
      <% if policy(Post.new).create? %>
        <%= link_to "new post", new_topic_post_path(@topic), class: 'btn btn-success' %>
      <% end %>
+
    </div>
  </div>
