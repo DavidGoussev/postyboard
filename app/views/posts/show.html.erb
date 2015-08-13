@@ -9,14 +9,16 @@
     </small>
     <p><%= markdown_to_html @post.body %></p>
     <p><%= image_tag(@post.image.url) if @post.image? %></p>
-    <br>
+    <br/>
     <h4> comments </h4>
-    <p><%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
-      <p><%= render @comments %>
+      <% if policy(@comments).new? %>
+        <p><%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %></p>
+      <% end %>
+        <p><%= render @comments %><p>
   </div>
-  <div class="col-md-4">
-    <% if policy(@post).edit? %>
-      <%= link_to "edit", edit_topic_post_path(@topic, @post, @comment), class: 'btn btn-success' %>
-    <% end %>
+    <div class="col-md-4">
+      <% if policy(@post).edit? %>
+        <%= link_to "edit", edit_topic_post_path(@topic, @post, @comment), class: 'btn btn-success' %>
+      <% end %>
+    </div>
   </div>
-</div>
