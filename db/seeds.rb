@@ -28,7 +28,7 @@ require 'faker'
       description:  Faker::Lorem.paragraph
     )
   end
-  topics = Topic.all
+  topics = Topic.all.select{ |t| t.id < 3 }
 
  # Create Posts
  500.times do

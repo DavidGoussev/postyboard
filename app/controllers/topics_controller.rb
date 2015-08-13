@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     #@posts = @topic.posts
     #@posts = @topic.posts.paginate(page: params[:page], per_page: 100)
-    @posts = @topic.posts.order('created_at DESC').page(params[:page]).per_page(6)
+    @posts = @topic.posts.order('created_at DESC').page(params[:page]).per_page(100)
     authorize @topic
   end
 
