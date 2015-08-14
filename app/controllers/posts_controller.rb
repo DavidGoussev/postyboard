@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @comments = @post.comments
     authorize @post
-    authorize @comments
+  #  authorize @comments
   end
 
   def new
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
       redirect_to [@topic, @post]
     else
       flash[:error] = "post was not updated, please try again"
-      render :edit
+      render 'posts/show'
     end
   end
 
