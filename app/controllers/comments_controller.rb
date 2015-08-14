@@ -15,14 +15,24 @@ class CommentsController < ApplicationController
       redirect_to [@topic, @post]
     else
       flash[:error] = "there was an error saving your comment. please try again!"
-<<<<<<< HEAD
       redirect_to [@topic, @post]
-=======
-      render 'posts/edit'
->>>>>>> Checkpoint46
     end
   end
 
+def destroy
+  @topic = Topic.find(params[:topic_id])
+  @post = @topic.posts.find(params[:post_id])
+  @comment = @post.comments.find(params[:id])
+
+  authorize @comment
+  if @comment.destroy
+    flash[:notice] = "comment was removed"
+    redirect_to [@topic, @post]
+  else
+    flash[:error] = "comment was not removed"
+    redirect_to [@topic, @post]
+  end
+end
 
 
   private

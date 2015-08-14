@@ -7,6 +7,10 @@
         by <%= comment.user.name %>
       </i>
       <%= image_tag(comment.user.avatar.tiny.url) if comment.user.avatar? %>
+      <% if policy(comment).destroy? %>
+        | <i><%= link_to "delete", [@topic, @post, comment], method: :delete %>
+      <% end %>
+    </i>
     </small>
   <% end %>
 </div>
