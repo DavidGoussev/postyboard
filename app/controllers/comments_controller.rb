@@ -15,7 +15,11 @@ class CommentsController < ApplicationController
       redirect_to [@topic, @post]
     else
       flash[:error] = "there was an error saving your comment. please try again!"
+<<<<<<< HEAD
       redirect_to [@topic, @post]
+=======
+      render 'posts/edit'
+>>>>>>> Checkpoint46
     end
   end
 
