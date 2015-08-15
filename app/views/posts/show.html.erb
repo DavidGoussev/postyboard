@@ -2,6 +2,7 @@
 
 <div class="row">
   <div class="col-md-8">
+    <%= render partial: 'votes/voter', locals: { post: @post } %>
     <small>
       <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
       submitted <%= time_ago_in_words(@post.created_at) %> ago by
@@ -23,5 +24,14 @@
       <% if policy(@post).destroy? %>
         <%= link_to "delete post", [@topic, @post], method: :delete, class: 'btn btn-danger', data: { confirm: 'are you sure you want to delete post?' } %>
       <% end %>
+
+      <div>
+        <h4><%= pluralize(@post.points, 'point') %></h4>
+        <small>
+          <%= pluralize(@post.up_votes, 'up vote') %>
+          <%= pluralize(@post.down_votes, 'down vote') %>
+        </small>
+      </div>
+
     </div>
   </div>

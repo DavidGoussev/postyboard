@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ //
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -26,4 +27,9 @@
 
 .comment{
   margin: 17px 10px;
+}
+
+.vote-arrows {
+  width: 40px;
+  text-align: center;
 }
