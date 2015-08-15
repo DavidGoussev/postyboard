@@ -66,7 +66,7 @@ class PostsController < ApplicationController
       render :show
     end
   end
-  
+
   private
 
   def post_params
