@@ -16,6 +16,8 @@ class Post < ActiveRecord::Base
   belongs_to :topic
   mount_uploader :image, ImageUploader
 
+  after_create :create_vote
+
   def up_votes
     votes.where(value: 1).count
   end
@@ -44,5 +46,11 @@ class Post < ActiveRecord::Base
     update_attribute(:rank, new_rank)
   end
 
+
+  private
+
+  def create_vote
+    user.votes.create(value: 1, post: self)
+  end
 
 end
