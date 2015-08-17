@@ -13,7 +13,7 @@
     <br/>
     <h4> comments </h4>
       <% if policy(@comments).new? %>
-        <p><%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %></p>
+        <p><%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %></p>
       <% end %>
         <p><%= render @comments %><p>
   </div>
