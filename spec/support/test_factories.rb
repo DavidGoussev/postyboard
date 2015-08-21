@@ -2,7 +2,7 @@ module TestFactories
 
   def associated_post(options={})
     post_options = {
-      title: 'Post Title!!!',
+      title: 'Post Title x 10000',
       body: 'Post bodies need to be  damn long!',
       topic: Topic.create(name: 'Topic name'),
       user: authenticated_user
