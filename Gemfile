@@ -26,6 +26,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+#lists all table fields in Model file
 gem 'annotate'
 
 #authentication solution (user accounts. password generation, login handling)
@@ -56,12 +57,14 @@ gem 'faker'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'newrelic_rpm'
-# New Relic performance monitoring
 
+#New Relic adds performance monitoring
+gem 'newrelic_rpm'
+
+#testing frameworks
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+#capybara tests user interactivity with app
   gem 'capybara'
 end
 
@@ -69,7 +72,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-#gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Twitter Bootstrap for CSS framework.
 gem 'bootstrap-sass'
 # Use ActiveModel has_secure_password
