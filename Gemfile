@@ -28,6 +28,9 @@ group :development, :production do
 gem 'puma'
 end
 
+#object-creation for Rails testing
+gem 'factory_girl_rails', '~> 4.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

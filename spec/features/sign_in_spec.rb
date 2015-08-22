@@ -21,7 +21,7 @@ describe "sign in flow" do
       end
 
       expect(current_path).to eq(topics_path)
-      
+
     end
   end
 
