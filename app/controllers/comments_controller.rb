@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
     authorize @comment
     if @comment.save
       flash[:notice] = "comment was saved!"
-      redirect_to [@post.topic, @post]
+      #redirect_to [@post.topic, @post]
+      #redirect_to :back
     else
       @comments = @post.comments
       @topic = @post.topic
