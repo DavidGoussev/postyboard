@@ -13,7 +13,7 @@
         </h2>
         <small>
           <%= pluralize(@user.posts.count, 'post') %>,
-          <div class='js-comments-count'><%= pluralize(@user.comments.count, 'comment') %></div>
+          <%= pluralize(@user.comments.count, 'comment') %>
         </small>
       </div>
     </div>
@@ -27,11 +27,11 @@
       <li><a href="#comments" data-toggle="tab">comments</a></li>
     </ul>
     <div class="tab-content">
-      <div class="tab-pane active" id="posts">
+      <div class="tab-pane fade in active" id="posts">
         <br>
         <%= render @posts %>
       </div>
-      <div class="tab-pane" id="comments">
+      <div class="tab-pane fade" id="comments">
         <br>
         <%= render @comments %>
       </div>
