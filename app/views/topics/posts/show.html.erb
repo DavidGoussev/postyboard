@@ -3,20 +3,26 @@
 <div class="row">
   <div class="col-md-8">
     <%= render partial: 'votes/voter', locals: { post: @post } %>
+
     <small>
       <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
       submitted <%= time_ago_in_words(@post.created_at) %> ago by
       <%= @post.user.name %>
     </small>
+
     <p><%= markdown_to_html @post.body %></p>
     <p><%= image_tag(@post.image.url) if @post.image? %></p>
-    <br/>
+    <br>
+
     <h4> comments </h4>
-      <% if policy(@comments).new? %>
-        <p><%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %></p>
-      <% end %>
-        <p><%= render partial: 'comments/comment', collection: @comments %><p>
+      <div class='js-comments'>
+        <%= render partial: 'comments/comment', collection: @comments %>
+      </div>
+      <div class='new-comment'>
+        <%= render 'comments/form' %>
+      </div>
   </div>
+
     <div class="col-md-4">
       <% if policy(@post).edit? %>
         <%= link_to "edit", edit_topic_post_path(@topic, @post, @comment), class: 'btn btn-success' %>
@@ -25,13 +31,13 @@
         <%= link_to "delete post", [@topic, @post], method: :delete, class: 'btn btn-danger', data: { confirm: 'are you sure you want to delete post?' } %>
       <% end %>
 
-      <div>
-        <h4><%= pluralize(@post.points, 'point') %></h4>
-        <small>
-          <%= pluralize(@post.up_votes, 'up vote') %>
-          <%= pluralize(@post.down_votes, 'down vote') %>
-        </small>
-      </div>
+        <div>
+          <h4><%= pluralize(@post.points, 'point') %></h4>
+          <small>
+            <%= pluralize(@post.up_votes, 'up vote') %>
+            <%= pluralize(@post.down_votes, 'down vote') %>
+          </small>
+        </div>
       <%= render partial: 'favorites/favorite', locals: { post: @post } %>
     </div>
-  </div>
+</div>
