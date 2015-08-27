@@ -1,6 +1,9 @@
 <% if @comment.destroyed? %>
   $('#comment-' +<%= @comment.id %>).fadeOut("slow");
   $('.js-comments-count').html("<%= pluralize(@comment.user.comments.count, 'comment') %>");
+  $('.flash').html("<%= escape_javascript(render partial: 'layouts/flash', locals: { flash: flash }) %>");;
+
 <% else %>
-  $('#comment-' +<%= @comment.id %>).prepend("div class='alert alert-danger'><%= flash[:error] %></div>");
+  $('.flash').html("<%= escape_javascript(render partial: 'layouts/flash', locals: { flash: flash }) %>");;
+
 <% end %>

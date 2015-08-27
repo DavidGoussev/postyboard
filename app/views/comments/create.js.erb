@@ -6,4 +6,5 @@
 <% else %>
   $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { post: @post, comment: @comment }) %>");
   $('.flash').html("<%= escape_javascript(render partial: 'layouts/flash', locals: { flash: flash }) %>");
+  $('#flashnotice').focus();
 <% end %>

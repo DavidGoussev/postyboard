@@ -33,9 +33,9 @@ def create
   authorize @comment
 
   if @comment.save
-    flash[:notice] = "comment was created"
+    flash.now[:notice] = "comment was created"
   else
-    flash[:error] = "comment was not created - minimum length is 5 chars"
+    flash.now[:error] = "comment was not created - minimum length is 5 chars"
   end
 
   respond_to do |format|
@@ -51,10 +51,10 @@ def destroy
 
   authorize @comment
   if @comment.destroy
-    flash[:notice] = "comment was removed"
+    flash.now[:notice] = "comment was removed"
     #redirect_to [@post.topic, @post]
   else
-    flash[:error] = "comment was not removed"
+    flash.now[:error] = "comment was not removed"
     #redirect_to [@post.topic, @post]
   end
 

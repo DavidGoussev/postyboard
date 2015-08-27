@@ -36,7 +36,7 @@
 
       </ul>
 
-      <%= render partial: 'layouts/flash', locals: { flash: flash } %>
+      <div id="flashnotice" tabindex="1"><%= render partial: 'layouts/flash', locals: { flash: flash } %></div>
 
   <%= yield %>
     </div>
