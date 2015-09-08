@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # http://bloccit.herokuapp.com
-  config.action_mailer.default_url_options = { host: 'dpg5000-bloccit.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'postyboard.herokuapp.com' }
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
  # config.force_ssl = true
