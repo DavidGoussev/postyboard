@@ -3,10 +3,15 @@
 <div class="jumbotron">
   <h1>postyboard</h1>
   <p>postyboard is a resource for sharing links, distributing news, disseminating info!</p>
-  <p>
+
+    <% if current_user %>
+      it's good to see you <%= link_to (current_user.name || current_user.email), current_user %>!
+    <% else %>
+    <p>
       <%= link_to "sign in", new_user_session_path, class: 'btn btn-primary' %> or
       <%= link_to "sign up", new_user_registration_path, class: 'btn btn-primary' %> today!
-  </p>
+    </p>
+    <% end %>
 </div>
 
 <div class="row">
